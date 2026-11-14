@@ -1,60 +1,66 @@
 $status = $true
-write-host " "
-write-host "Hello powershell!!!" -foregroundcolor cyan
-write-host " "
-write-host "Script active?" -foregroundcolor cyan
-write-host " "
+
+Write-Host ""
+Write-Host "Hello powershell!!!" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "Script active?" -ForegroundColor Cyan
+Write-Host ""
+
 if ($status -eq $true) {
-	write-host "=============" -foregroundcolor green
-	write-host "|| Active. ||" -foregroundcolor green
-	write-host "=============" -foregroundcolor green
+    Write-Host "=============" -ForegroundColor Green
+    Write-Host "|| Active. ||" -ForegroundColor Green
+    Write-Host "=============" -ForegroundColor Green
+} else {
+    Write-Host "===============" -ForegroundColor Red
+    Write-Host "|| Inactive. ||" -ForegroundColor Red
+    Write-Host "===============" -ForegroundColor Red
 }
-else {
-	write-host "===============" -foregroundcolor red
-	write-host "|| Inactive. ||" -foregroundcolor red
-	write-host "===============" -foregroundcolor red
-	
-}
-write-host " "
-$auth = read-host -prompt "Enter password to enter secret access or type 'exit' to exit"
+
+Write-Host ""
+$auth = Read-Host -Prompt "Enter password to enter secret access or type exit to exit"
+
 while ($auth -ne "pass") {
-	if ($auth -eq "exit") {
-		write-host " "
-		write-host "Okay, exiting..." -foregroundcolor blue
-		write-host " "
-		exit 0
-	}
-	write-host " "
-	write-host "Access denied." -foregroundcolor red
-	write-host " "
-	read-host -prompt "Re-enter password or type 'exit' "
+    if ($auth -eq "exit") {
+        Write-Host ""
+        Write-Host "Okay, exiting..." -ForegroundColor Blue
+        Write-Host ""
+        exit 0
+    }
+    Write-Host ""
+    Write-Host "Access denied." -ForegroundColor Red
+    Write-Host ""
+    $auth = Read-Host -Prompt "Re-enter password or type exit"
 }
-write-host " "
-write-host "Access granted." -foregroundcolor green
-write-host " "
-write-host "===SECRET=MESSAGE===" -foregroundcolor green
-write-host "|You are awesome :)|"-foregroundcolor green
-write-host "====================" -foregroundcolor green
-write-host " "
-[int]$auth_two = read-host -prompt "Enter binary password for secret secret access (or type '0' to exit)"
-while ($auth_two -ne 1100111001) {
-	if ($auth_two -eq 0) {
-		write-host " "
-		write-host "Okay, exiting..." -foregroundcolor blue
-		write-host " "
-		exit 0
-	}
-	write-host " "
-	write-host "Access denied." -foregroundcolor red
-	write-host " "
-	write-host "HINT: binary number for decimal 825" -foregroundcolor yellow
-	write-host " "
-	$auth_two = read-host -prompt "Re-enter password or type '0' to exit"
+
+Write-Host ""
+Write-Host "Access granted." -ForegroundColor Green
+Write-Host ""
+Write-Host "===SECRET=MESSAGE===" -ForegroundColor Green
+Write-Host "|You are awesome :)|" -ForegroundColor Green
+Write-Host "====================" -ForegroundColor Green
+Write-Host ""
+
+$auth_two = Read-Host -Prompt "Enter binary password for secret secret access (or type 0 to exit)"
+
+while ($auth_two -ne "1100111001") {
+    if ($auth_two -eq "0") {
+        Write-Host ""
+        Write-Host "Okay, exiting..." -ForegroundColor Blue
+        Write-Host ""
+        exit 0
+    }
+    Write-Host ""
+    Write-Host "Access denied." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "HINT: binary number for decimal 825" -ForegroundColor Yellow
+    Write-Host ""
+    $auth_two = Read-Host -Prompt "Re-enter password or type 0 to exit"
 }
-write-host " "
-write-host "Access granted." -foregroundcolor magenta
-write-host " "
-write-host "===SECRET=MESSAGE===" -foregroundcolor magenta
-write-host "|You're so smart :O|"-foregroundcolor magenta
-write-host "====================" -foregroundcolor magenta
-write-host " "
+
+Write-Host ""
+Write-Host "Access granted." -ForegroundColor Magenta
+Write-Host ""
+Write-Host "===SECRET=MESSAGE===" -ForegroundColor Magenta
+Write-Host "|You're so smart :O|" -ForegroundColor Magenta
+Write-Host "====================" -ForegroundColor Magenta
+Write-Host ""
